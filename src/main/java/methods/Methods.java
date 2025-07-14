@@ -9,9 +9,9 @@ import static io.restassured.RestAssured.given;
 
 public class Methods {
 
-    private static final String updateUserPath = "/api/auth/user";
-    private static final String loginUserPath = "/api/auth/login";
-    private static final String createUserPath = "/api/auth/register";
+    private static final String UPDATE_USER_PATH = "/api/auth/user";
+    private static final String LOGIN_USER_PATH = "/api/auth/login";
+    private static final String CREATE_USER_PATH = "/api/auth/register";
 
     @Step("Удалить пользователя")
     public static ValidatableResponse deleteUser(String accessToken) {
@@ -20,7 +20,7 @@ public class Methods {
                 .header("Authorization", accessToken)
                 .when()
                 .log().all()
-                .delete(updateUserPath)
+                .delete(UPDATE_USER_PATH)
                 .then()
                 .log().all();
 
@@ -34,7 +34,7 @@ public class Methods {
                 .when()
                 .body(auth)
                 .log().all()
-                .post(loginUserPath)
+                .post(LOGIN_USER_PATH)
                 .then()
                 .log().all();
 
@@ -48,7 +48,7 @@ public class Methods {
                 .when()
                 .body(user)
                 .log().all()
-                .post(createUserPath)
+                .post(CREATE_USER_PATH)
                 .then()
                 .log().all();
 

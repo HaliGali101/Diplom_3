@@ -8,7 +8,7 @@ public class ForgotPasswordPage {
 
     private WebDriver driver;
 
-    private final String forgotPasswordUrl = "https://stellarburgers.nomoreparties.site/forgot-password";
+    private static final String FORGOT_USER_URL = "https://stellarburgers.nomoreparties.site/forgot-password";
 
     private final By linkLogin = By.xpath("//a[text()='Войти']");
 
@@ -18,7 +18,7 @@ public class ForgotPasswordPage {
 
     @Step("Перейти к странице сброса пароля")
     public void goToForgotPage() {
-        driver.get(forgotPasswordUrl);
+        driver.get(FORGOT_USER_URL);
     }
 
     @Step("Нажать на ссылку - Войти")

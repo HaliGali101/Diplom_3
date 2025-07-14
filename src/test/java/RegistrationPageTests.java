@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import pojo.User;
 import steps.ApiSteps;
-import testDataGenerator.GetUserData;
+import testdatagenerator.GetUserData;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;

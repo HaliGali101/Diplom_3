@@ -8,7 +8,9 @@ import org.openqa.selenium.WebElement;
 public class MainPage {
 
     private WebDriver driver;
-    private final String mainPageUrl = "https://stellarburgers.nomoreparties.site/";
+    private static final String MAIN_PAGE_URL = "https://stellarburgers.nomoreparties.site/";
+    private static final String STATE_INGREDIENTS_NO_SELECTED = "tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect";
+    private static final String STATE_INGREDIENTS_SELECTED = "tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect";
 
     private final By loginButton = By.xpath("//button[text()='Войти в аккаунт']");
     private final By buttonCreateOrder = By.xpath("//button[text()='Оформить заказ']");
@@ -17,20 +19,18 @@ public class MainPage {
     private final By chapterSouses = By.xpath("//span[text()='Соусы']/..");
     private final By chapterBuns = By.xpath("//span[text()='Булки']/..");
     private final By chapterFillings = By.xpath("//span[text()='Начинки']/..");
-    private final By headerSouses = By.xpath("//h2[text()='Соусы']");
-    private final By headerBuns = By.xpath("//h2[text()='Булки']");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public String getMainPageUrl() {
-        return mainPageUrl;
+        return MAIN_PAGE_URL;
     }
 
     @Step("Перейти к главной странице приложения")
     public void goToMainPage(){
-        driver.get(mainPageUrl);
+        driver.get(MAIN_PAGE_URL);
     }
 
     @Step("Нажать на кнопку - Войти в аккаунт")
@@ -87,5 +87,13 @@ public class MainPage {
 
     public WebElement getChapterFillings() {
         return driver.findElement(chapterFillings);
+    }
+
+    public String getStateUnSelectedElement() {
+        return STATE_INGREDIENTS_NO_SELECTED;
+    }
+
+    public String getStateSelectedElement() {
+        return STATE_INGREDIENTS_SELECTED;
     }
 }

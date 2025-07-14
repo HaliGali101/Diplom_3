@@ -1,4 +1,4 @@
-package testDataGenerator;
+package testdatagenerator;
 
 import com.github.javafaker.Faker;
 import pojo.User;

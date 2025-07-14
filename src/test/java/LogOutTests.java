@@ -7,7 +7,7 @@ import pages.MainPage;
 import pages.PersonalAccountPage;
 import pojo.User;
 import steps.ApiSteps;
-import testDataGenerator.GetUserData;
+import testdatagenerator.GetUserData;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class RegistrationPage {
 
     private final WebDriver driver;
-    private final String registerPageUrl = "https://stellarburgers.nomoreparties.site/register";
+    private static final String REGISTER_PAGE_URL = "https://stellarburgers.nomoreparties.site/register";
 
     private final By inputName = By.xpath("//label[text()='Имя']/following-sibling::input[1]");
     private final By inputEmail = By.xpath("//label[text()='Email']/following-sibling::input[1]");
@@ -22,7 +22,7 @@ public class RegistrationPage {
 
     @Step("Перейти к странице регистрации")
     public void goToRegistrationPage() {
-        driver.get(registerPageUrl);
+        driver.get(REGISTER_PAGE_URL);
     }
 
     @Step("Ввести в поле Имя - имя пользователя")
@@ -64,7 +64,7 @@ public class RegistrationPage {
     }
 
     public String getPageUrl() {
-        return registerPageUrl;
+        return REGISTER_PAGE_URL;
     }
 
 

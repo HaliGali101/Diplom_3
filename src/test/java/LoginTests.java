@@ -8,7 +8,7 @@ import pages.MainPage;
 import pages.RegistrationPage;
 import pojo.User;
 import steps.ApiSteps;
-import testDataGenerator.GetUserData;
+import testdatagenerator.GetUserData;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;

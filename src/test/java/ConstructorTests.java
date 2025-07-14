@@ -9,34 +9,50 @@ public class ConstructorTests extends SetUp{
 
     @Test
     @DisplayName("Проверь переходы к разделам в конструкторе: Булки, Соусы», Начинки")
-    public void constructorTest() throws InterruptedException {
+    public void constructorSelectSousesTest() {
         MainPage mainPage = new MainPage(driver);
         mainPage.goToMainPage();
 
         mainPage.clickChapterSouses();
-        assertEquals("tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect", mainPage.getChapterBuns()
+        assertEquals(mainPage.getStateUnSelectedElement(), mainPage.getChapterBuns()
                 .getAttribute("class"));
-        assertEquals("tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect", mainPage.getChapterSouses()
+        assertEquals(mainPage.getStateSelectedElement(), mainPage.getChapterSouses()
                 .getAttribute("class"));
-        assertEquals("tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect", mainPage.getChapterFillings()
+        assertEquals(mainPage.getStateUnSelectedElement(), mainPage.getChapterFillings()
                 .getAttribute("class"));
+    }
+
+    @Test
+    @DisplayName("Проверь переходы к разделам в конструкторе: Булки, Соусы», Начинки")
+    public void constructorSelectFillingsTest() {
+        MainPage mainPage = new MainPage(driver);
+        mainPage.goToMainPage();
 
         mainPage.clickChapterFillings();
+        assertEquals(mainPage.getStateUnSelectedElement(), mainPage.getChapterBuns()
+                .getAttribute("class"));
+        assertEquals(mainPage.getStateUnSelectedElement(), mainPage.getChapterSouses()
+                .getAttribute("class"));
+        assertEquals(mainPage.getStateSelectedElement(), mainPage.getChapterFillings()
+                .getAttribute("class"));
+    }
+
+    @Test
+    @DisplayName("Проверь переходы к разделам в конструкторе: Булки, Соусы», Начинки")
+    public void constructorSelectBunsTest() throws InterruptedException {
+        MainPage mainPage = new MainPage(driver);
+        mainPage.goToMainPage();
+
+        mainPage.clickChapterSouses();
         Thread.sleep(1000);
-        assertEquals("tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect", mainPage.getChapterBuns()
-                .getAttribute("class"));
-        assertEquals("tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect", mainPage.getChapterSouses()
-                .getAttribute("class"));
-        assertEquals("tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect", mainPage.getChapterFillings()
-                .getAttribute("class"));
 
         mainPage.clickChapterBuns();
         Thread.sleep(1000);
-        assertEquals("tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect", mainPage.getChapterBuns()
+        assertEquals(mainPage.getStateSelectedElement(), mainPage.getChapterBuns()
                 .getAttribute("class"));
-        assertEquals("tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect", mainPage.getChapterSouses()
+        assertEquals(mainPage.getStateUnSelectedElement(), mainPage.getChapterSouses()
                 .getAttribute("class"));
-        assertEquals("tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect", mainPage.getChapterFillings()
+        assertEquals(mainPage.getStateUnSelectedElement(), mainPage.getChapterFillings()
                 .getAttribute("class"));
     }
 

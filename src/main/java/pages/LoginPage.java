@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
-    private static final String loginPageUrl = "https://stellarburgers.nomoreparties.site/login";
+    private static final String LOGIN_PAGE_URL = "https://stellarburgers.nomoreparties.site/login";
 
     private final WebDriver driver;
 
@@ -26,12 +26,12 @@ public class LoginPage {
     }
 
     public static String getLoginPageUrl() {
-        return loginPageUrl;
+        return LOGIN_PAGE_URL;
     }
 
     @Step("Перейти к странице авторизации")
     public void goToLoginPage() {
-        driver.get(loginPageUrl);
+        driver.get(LOGIN_PAGE_URL);
     }
     @Step("Ввести в поле Email - email пользователя")
     public void setInputEmail(String email) {
@@ -64,6 +64,6 @@ public class LoginPage {
     }
 
     public String getPageUrl() {
-        return loginPageUrl;
+        return LOGIN_PAGE_URL;
     }
 }
